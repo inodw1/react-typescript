@@ -96,3 +96,13 @@ function add(a: number, b: number): number {
     const result = a + b;
     return result;
 }
+
+function calculate(
+    a: number,
+    b: number,
+    calcFn: (a: number, b: number) => number
+) {
+    calcFn(a, b);
+}
+
+calculate(5, 2, add);
