@@ -112,3 +112,15 @@ function calculate(a: number, b: number, calcFn: AddFn) {
 }
 
 calculate(5, 2, add);
+
+interface Credentials {
+    username: string;
+    email: string;
+}
+
+let creds: Credentials;
+
+creds = {
+    username: "inodw1",
+    email: "inodwagachchi@gmail.com",
+};
