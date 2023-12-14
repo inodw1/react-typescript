@@ -28,3 +28,36 @@ let isValid = true;
 /** we can combine types in typescript */
 let userId: string | number = "abc1";
 userId = 123;
+
+/** Working with object types */
+
+// let user: object;
+
+// user = "Inod"; !Error
+
+// user = {
+//     name: "Inod",
+//     age: 31,
+//     isAdmin: true,
+//     id: "abc", // 123
+// };
+
+/**
+ * above code is also accepted. but we also can assign an empty object to it,
+ * user = {}
+ * we need to prevent this
+ */
+
+let user: {
+    name: string;
+    age: 31;
+    isAdmin: boolean;
+    id: string | number;
+};
+
+user = {
+    name: "Inod",
+    age: 31,
+    isAdmin: true,
+    id: "abc", // 123
+};
