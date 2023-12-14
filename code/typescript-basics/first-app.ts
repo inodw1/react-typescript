@@ -124,3 +124,35 @@ creds = {
     username: "inodw1",
     email: "inodwagachchi@gmail.com",
 };
+
+/**
+ * There are 2 keywords to define object types
+ * `type` & `interface` why?
+ * type can use other definitions like unions. But, interface specify for object definitions
+ *
+ * thers is an another example below, it has used Credentials interface to implement AuthCredentials class
+ * we can add additional parameters to that AuthCredentials
+ * If there is a login function and it takes parameter credentials which define with Credentials interface
+ * login(new AuthCredentials()); when we call like this ts will understand it has define with Credentials interface.
+ * This is an another reason to use interface
+ */
+
+class AuthCredentials implements Credentials {
+    username: string;
+    email: string;
+    password: string;
+}
+
+function login(credentials: Credentials) {}
+
+login(creds);
+login(new AuthCredentials());
+
+/**
+ * other reason is interfaces are extendable
+ * later we can add parameters
+ */
+
+// interface Credentials {
+//     userId: string;
+// }
