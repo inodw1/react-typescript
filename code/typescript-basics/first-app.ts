@@ -70,3 +70,29 @@ let hobbies: string[]; // number[], boolean[]
 // ex: let users: { name: string; age: number }[];
 
 hobbies = ["Traveling", "Sports", "Reading"];
+
+/////// working with functions //////////
+
+/**
+ *
+ * @param a number 1
+ * @param b number 2
+ * since this function not going to return anythin we have to set return type as `void`
+ * also we can set `undefined`, it would be working fine. But use `void` programmertically
+ */
+
+// function add(a: number, b: number): void {
+//     const result = a + b;
+//     console.log("[iw] result ---> ", result);
+// }
+
+/**
+ *
+ * @param a number 1
+ * @param b number 2
+ * @returns sum of number 1 and number 2
+ */
+function add(a: number, b: number): number {
+    const result = a + b;
+    return result;
+}
