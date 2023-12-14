@@ -24,3 +24,7 @@ let isValid = true;
  * But we are not going to compile every time
  * instead of, we can identify erros with support of the IDE
  */
+
+/** we can combine types in typescript */
+let userId: string | number = "abc1";
+userId = 123;
