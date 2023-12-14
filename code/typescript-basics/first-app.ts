@@ -48,12 +48,14 @@ userId = 123;
  * we need to prevent this
  */
 
-let user: {
+type User = {
     name: string;
     age: 31;
     isAdmin: boolean;
     id: string | number;
 };
+
+let user: User;
 
 user = {
     name: "Inod",
@@ -97,11 +99,15 @@ function add(a: number, b: number): number {
     return result;
 }
 
-function calculate(
-    a: number,
-    b: number,
-    calcFn: (a: number, b: number) => number
-) {
+/**
+ * when we define types for a complex functions definitions will longer
+ * thes we create `custom types`
+ * also, we can reuse them
+ * ex: type StringOrNum = string | number
+ */
+type AddFn = (a: number, b: number) => number;
+
+function calculate(a: number, b: number, calcFn: AddFn) {
     calcFn(a, b);
 }
 
