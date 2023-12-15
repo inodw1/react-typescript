@@ -212,3 +212,40 @@ function performAction(action: number | string, role: Role) {
         //
     }
 }
+
+/**
+ * Important: You can NOT check if a value meets the definition of a custom type (type alias) or interface type.
+ * These are TypeScript-specific features for which no JavaScript equivalent exists.
+ * Therefore, since those if checks need to run at runtime,
+ * you can't write any code that would be able to check for those types at runtime.
+ * For example, the below code won't work
+ * because the User type does not exist once the code is compiled to JavaScript:
+ * 
+        type User = {
+        name: string;
+        age: number;
+        };
+        
+        type Admin = {
+        name: string;
+        age: number;
+        permissions: string[];
+        };
+        
+        function login(u: User | Admin) { // Error
+        if (typeof u === User) {
+            // do something
+        }
+        }
+    
+    But you could check for the existence of the permissions property
+    since only the Admin object will have one:
+
+        function login(u: User | Admin) {
+            if ('permissions' in u) {
+                // do something
+            }
+        }
+
+    This code would work at runtime.
+ */
