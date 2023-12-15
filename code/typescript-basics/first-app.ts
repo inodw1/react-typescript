@@ -194,3 +194,12 @@ admin = {
     permissions: ["login"],
     userName: "inod",
 };
+
+/////// being specific with literal types //////////
+
+let role: "admin" | "user" | "editor";
+
+role = "admin";
+role = "user";
+role = "editor";
+// role = "manager"; // Type Error
