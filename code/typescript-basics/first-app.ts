@@ -156,3 +156,22 @@ login(new AuthCredentials());
 // interface Credentials {
 //     userId: string;
 // }
+
+/////// merge object types //////////
+
+type Admin = {
+    permissions: string[];
+};
+
+type AppUser = {
+    userName: string;
+};
+
+type AppAdmin = Admin & AppUser;
+
+let admin: AppAdmin;
+
+admin = {
+    permissions: ["login"],
+    userName: "inod",
+};
