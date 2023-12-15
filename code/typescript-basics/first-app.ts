@@ -249,3 +249,37 @@ function performAction(action: number | string, role: Role) {
 
     This code would work at runtime.
  */
+
+/////// generic types //////////
+
+let roles: Array<Role>;
+roles = ["admin", "user"];
+
+type DataStorage<T> = {
+    storage: T[];
+    add: (data: T) => void;
+};
+
+const textStorage: DataStorage<string> = {
+    storage: [],
+    add(data) {
+        this.storage.push(data);
+    },
+};
+
+const userStorage: DataStorage<User> = {
+    storage: [{ name: "inod", age: 31, isAdmin: true, id: "abc123" }],
+    add(user) {},
+};
+
+function merge<T, U>(a: T, b: U) {
+    return {
+        ...a,
+        ...b,
+    };
+}
+
+const newUser = merge<{ name: string }, { age: number }>(
+    { name: "inod" },
+    { age: 31 }
+);
