@@ -159,6 +159,7 @@ login(new AuthCredentials());
 
 /////// merge object types //////////
 
+/*
 type Admin = {
     permissions: string[];
 };
@@ -168,6 +169,24 @@ type AppUser = {
 };
 
 type AppAdmin = Admin & AppUser;
+
+let admin: AppAdmin;
+
+admin = {
+    permissions: ["login"],
+    userName: "inod",
+};
+*/
+
+interface Admin {
+    permissions: string[];
+}
+
+interface AppUser {
+    userName: string;
+}
+
+interface AppAdmin extends Admin, AppUser {}
 
 let admin: AppAdmin;
 
